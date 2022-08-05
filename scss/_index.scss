@@ -1,0 +1,269 @@
+@import "./_var.scss";
+@import "./_breakpoints.scss";
+
+.carousel-flexbox-row {
+  display: flex;
+  align-items: center;
+  height: auto;
+  justify-content: center;
+
+  // @include tablet {
+  //   height: 650px;
+  // }
+
+  [class*="images-arrow"] {
+    font-size: 3rem;
+    color: $dark-grey;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include breakpoint(577px) {
+      font-size: 2.3rem;
+    }
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
+    @include breakpoint(322px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  [class*="images-arrow"]:hover {
+    color: $dark-text;
+  }
+
+  .images-arrow-left {
+    margin-left: 4%;
+  }
+  .images-arrow-right {
+    margin-right: 4%;
+  }
+}
+
+.column-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 2%;
+  max-width: $max-width;
+  min-width: 400px;
+  margin: 2rem auto;
+  align-self: center;
+
+  @include tablet {
+    position: relative;
+    width: 60%;
+    height: 550px;
+    overflow-x: hidden;
+    padding: 0;
+  }
+
+  @include breakpoint(577px) {
+    min-width: 350px;
+    height: 460px;
+  }
+
+  @include mobile {
+    min-width: 300px;
+    height: 425px;
+  }
+
+  @include breakpoint(400px) {
+    min-width: 260px;
+    height: 400px;
+  }
+  @include breakpoint(322px) {
+    min-width: 240px;
+    height: 420px;
+  }
+
+  h4 {
+    font-size: $subtitle-size;
+    font-weight: bolder;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .column {
+    flex: 33.33%;
+    margin: 0 1%;
+    padding: 1rem;
+    background-color: $light-grey;
+    box-shadow: 2px 4px 4px $dark-grey;
+    border-radius: 4px;
+
+    @include tablet {
+      position: absolute;
+      width: 100%;
+      height: 540px;
+      margin: auto;
+      padding: 1rem;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    @include breakpoint(577px) {
+      height: 460px;
+    }
+
+    @include mobile {
+      height: 420px;
+    }
+
+    @include breakpoint(400px) {
+      height: 380px;
+    }
+    @include breakpoint(322px) {
+      height: 420px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.best-sellers-title {
+  font-size: $subtitle-size;
+  text-align: center;
+}
+
+.best-sellers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: $max-width;
+  margin: auto;
+
+  .column {
+    flex: 50%;
+    margin: 1rem 4%;
+    text-align: center;
+
+    a {
+      color: $dark-text;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 1rem;
+      transition: src 2s ease-in-out;
+      border-radius: 7px;
+    }
+  }
+}
+
+.review-carousel {
+  margin: 20px auto;
+  height: auto;
+
+  h2 {
+    font-size: $subtitle-size;
+    text-align: center;
+  }
+
+  .reviews-flexbox-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+
+    [class*="review-arrow"] {
+      font-size: 3rem;
+      color: $dark-grey;
+      cursor: pointer;
+      z-index: 2;
+
+      @include tablet {
+        font-size: 2.3rem;
+      }
+
+      @include breakpoint(578px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .review-arrow-left {
+      margin-left: 3%;
+      margin-right: 2%;
+    }
+
+    .review-arrow-right {
+      margin-right: 3%;
+      margin-left: 2%;
+    }
+
+    [class*="review-arrow"]:hover {
+      color: $dark-text;
+    }
+
+    .review-box {
+      position: relative;
+      background: $light-grey;
+      box-shadow: 3px 6px 6px $dark-grey;
+      padding: 20px;
+      border-radius: 6px;
+      height: 200px;
+      width: 1000px;
+      z-index: -1;
+      overflow: hidden;
+
+      .full-review {
+        position: absolute;
+        padding: 35px 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        transition: transform 0.3s ease-in-out;
+
+        @include laptop {
+          font-size: 0.8rem;
+        }
+
+        @include tablet {
+          font-size: 0.7rem;
+          padding: 30px 20px;
+        }
+
+        @include breakpoint(578px) {
+          font-size: 0.6rem;
+        }
+      }
+
+      .review-1 {
+        transform: translate(0);
+        z-index: 99;
+      }
+      .review-2 {
+        transform: translate(100%);
+      }
+      .review-3 {
+        transform: translate(200%);
+      }
+      .review-4 {
+        transform: translate(300%);
+      }
+      .review-5 {
+        transform: translate(400%);
+      }
+
+      .review {
+        text-align: center;
+      }
+      .review-info {
+        margin-top: 1.5rem;
+        text-align: center;
+      }
+    }
+  }
+}

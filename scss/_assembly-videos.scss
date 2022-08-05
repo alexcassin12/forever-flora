@@ -1,0 +1,83 @@
+@import "./_var.scss";
+@import "./_breakpoints.scss";
+
+.video-nav {
+  text-align: center;
+  margin: 2rem 0;
+
+  ul {
+    @include tablet {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+
+  li {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    border: 2px $bg-green solid;
+    border-radius: 14px;
+    cursor: pointer;
+
+    @include tablet {
+      display: block;
+      border: 1px solid $light-grey;
+      border-radius: 3px;
+      margin-bottom: 2px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $dark-text;
+    }
+  }
+  .active {
+    background-color: $bg-green;
+    a {
+      color: $light-text;
+    }
+  }
+  @include tablet {
+    display: none;
+    position: fixed;
+    top: 14.5rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $transparent-modal-cover;
+    text-align: center;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    z-index: 3;
+  }
+}
+
+.videos-burger-menu-icon {
+  display: none;
+  width: 35px;
+  margin: 10px auto 10px auto;
+
+  @include tablet {
+    display: block;
+  }
+
+  span {
+    font-size: 2.4rem;
+  }
+}
+
+.video-frame {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-bottom: 30px;
+  iframe {
+    display: block;
+    margin: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}

@@ -1,0 +1,30 @@
+@import "./_var.scss";
+@import "./_breakpoints.scss";
+
+.product-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: $max-width;
+  margin: auto;
+
+  .product-card {
+    background-color: $light-grey;
+    box-shadow: 2px 4px 4px $dark-grey;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    width: 285px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $dark-text;
+  }
+}

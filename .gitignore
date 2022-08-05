@@ -1,0 +1,4 @@
+copy-over-images
+.parcel-cache
+node_modules
+dist

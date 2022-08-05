@@ -1,0 +1,44 @@
+@import "./_var.scss";
+@import "./_breakpoints.scss";
+
+.faq-accordion {
+  width: 80%;
+  margin: auto;
+  display: block;
+  padding: 10px 0;
+  max-width: $max-width;
+
+  .accordion {
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    padding: 18px 25px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bolder;
+
+    .add-symbol {
+      position: absolute;
+      right: 15px;
+    }
+
+    .active,
+    &:hover {
+      background-color: rgb(230, 230, 230);
+    }
+  }
+
+  .panel {
+    padding: 5px 25px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    text-align: left;
+  }
+}

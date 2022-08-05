@@ -1,0 +1,213 @@
+@import "./_var.scss";
+@import "./_breakpoints.scss";
+
+.header-sec {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .offer-bar {
+    z-index: 1;
+    background-color: $bg-pink;
+    height: 40px;
+    text-align: center;
+    padding-top: 5px;
+    width: 100%;
+    color: $light-text;
+    font-size: 1rem;
+
+    @include mobile {
+      font-size: 0.8rem;
+    }
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 7rem;
+    width: 100%;
+    z-index: 90;
+
+    @include tablet {
+      height: 5rem;
+    }
+
+    .logo-navlinks {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .logo {
+      z-index: -1;
+      img {
+        width: 150px;
+
+        @include tablet {
+          width: 100px;
+        }
+      }
+    }
+
+    .nav-links {
+      ul {
+        @include tablet {
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+      }
+
+      li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 3px 10px;
+
+        @include tablet {
+          display: block;
+        }
+      }
+
+      .active {
+        background-color: $bg-green;
+        border-radius: 4px;
+        color: $light-text;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+      a:active {
+        color: $bg-green;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @include tablet {
+        display: none;
+        position: fixed;
+        top: 7.5rem;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $transparent-modal-cover;
+        text-align: center;
+        padding: 20px 40px;
+        font-size: 1.5rem;
+        z-index: 3;
+      }
+    }
+
+    .burger-menu-icon {
+      display: none;
+      margin: auto;
+      width: 70px;
+      height: 70px;
+      text-align: center;
+      &:hover {
+        background-color: $bg-green;
+        border-radius: 40px;
+        cursor: pointer;
+        color: white;
+      }
+      span {
+        font-variation-settings: "FILL" 0, "wght" 280, "GRAD" 0, "opsz" 48;
+        font-size: 3.7rem;
+        padding: 5px;
+        z-index: 3;
+      }
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    .cart-btn {
+      margin-right: 3%;
+      border: 1px solid white;
+      border-radius: 33px;
+
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
+        font-size: 2.7rem;
+        padding: 15px;
+
+        &:hover {
+          background-color: $bg-green;
+          border-radius: 40px;
+          color: white;
+          cursor: pointer;
+        }
+      }
+      .flash {
+        background-color: $bg-green;
+        border-radius: 40px;
+        color: white;
+      }
+    }
+  }
+
+  .title {
+    background-color: $bg-green;
+    color: $light-text;
+    width: 100%;
+    height: 14rem;
+    margin: auto;
+    text-align: center;
+    line-height: 2.5rem;
+
+    @include tablet {
+      height: 10.8rem;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      width: 400px;
+
+      @include tablet {
+        width: 280px;
+      }
+    }
+
+    button {
+      padding: 0.5rem 2rem;
+      background-color: inherit;
+      border: 1px white solid;
+      color: $light-text;
+    }
+
+    button:hover {
+      border-width: 2px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:active {
+      border-width: 1px;
+    }
+  }
+
+  .pages-title {
+    background-color: $bg-green;
+    color: $light-text;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    padding: 1rem 0;
+
+    h1 {
+      font-size: $title-size;
+    }
+  }
+}
